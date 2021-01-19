@@ -2,7 +2,7 @@
 
 该脚本用于向手机发送文件，是一个` test.txt`文件；文件中的内容为：
 
-` bluettoth test` 
+` bluettoth test`  
 
 安装相关Python库：
 
