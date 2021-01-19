@@ -13,34 +13,10 @@ def Bluetooth_Scan():
         return devices
     else:
         print("Found none devices")
+        
         return
-
-    # for addr, name in devices:
-    #     print("%s - %s" % (name, addr))
-    #
-    #     Filter out the devices to use
-    #     if name != "Honor Play":
-    #         continue
-    #     Parameter interpretation:
-    #     [address]: the address of device contain the server
-    #     [uuid]: the uuid of the server
-    #     [name]: the name of the server
-    #     return a list of server
-    #     services = bluetooth.find_service(address=addr)
-    #     for svc in services:
-    #         print("Service Name: %s" % svc["name"])
-    #         print("    Host:        %s" % svc["host"])
-    #         print("    Description: %s" % svc["description"])
-    #         print("    Provided By: %s" % svc["provider"])
-    #         print("    Protocol:    %s" % svc["protocol"])
-    #         print("    channel/PSM: %s" % svc["port"])
-    #         print("    svc classes: %s " % svc["service-classes"])
-    #         print("    profiles:    %s " % svc["profiles"])
-    #         print("    service id:  %s " % svc["service-id"])
-    #         print("")
-    # return
-
-
+    
+# Send file to the phone
 def RFCOMM_Sendfile(address, fname="test.txt", fdata=b'Hello world\n'):
 
     print("Searching for OBEX service on %s" % address)
@@ -81,6 +57,8 @@ def Test(devicename):
 
     specdevfound = False
     devices = Bluetooth_Scan()
+    if not len(devices):
+        return
     for addr, name in devices:
         print("%s - %s" % (name, addr))
         if devicename == name:
@@ -89,7 +67,7 @@ def Test(devicename):
             specdevfound = True
     if not specdevfound:
         print("Not found device wanna")
-
+        
     return
 
 if __name__ == "__main__":
