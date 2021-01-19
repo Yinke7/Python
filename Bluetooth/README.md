@@ -29,7 +29,7 @@
 <img src="https://github.com/Yinke7/Python/blob/main/Bluetooth/Image/context.jpg" style="zoom:25%;" />
 
 注：
-该脚本目前只能在` Linux`主机上运行，` windows`和虚拟机上似乎不能运行。
+该脚本目前只能在` Linux`主机上运行，` windows`和虚拟机上似乎不能运行。 
 
 
 
