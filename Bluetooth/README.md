@@ -15,3 +15,18 @@
 ` $ python3 Bluettoth_Sendfile2phone.py "AOSP on BullHead"`
 
 ` "AOSP on BullHead"`是设备的蓝牙名称，执行脚本时徐焕成对应手机的蓝牙设备名称。
+
+运行结果为：
+
+![](C:\Users\yk152\Pictures\Saved Pictures\蓝牙传输.jpg)
+
+此时，手机端会收到蓝牙传输文件：
+
+<img src="C:\Users\yk152\Pictures\Saved Pictures\蓝牙文件.jpg" style="zoom:25%;" />
+
+点击接受，打开文件可以看到` Hello Bluetooth`的内容：
+
+<img src="C:\Users\yk152\Pictures\Saved Pictures\接受文件.jpg" style="zoom:25%;" />
+
+
+
