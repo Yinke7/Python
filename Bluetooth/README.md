@@ -18,15 +18,15 @@
 
 运行结果为：
 
-![](D:\GitHubFiles\Python\Image\execute script.jpg)
+<img src="https://github.com/Yinke7/Python/blob/main/Image/execute%20script.jpg" style="zoom:25%;" />
 
 此时，手机端会收到蓝牙传输文件：
 
-<img src="D:\GitHubFiles\Python\Image\recieve request.jpg" style="zoom:25%;" />
+<img src="https://github.com/Yinke7/Python/blob/main/Image/recieve%20request.jpg" style="zoom:25%;" />
 
 点击接受，打开文件可以看到` Hello Bluetooth`的内容：
 
-<img src="D:\GitHubFiles\Python\Image\context.jpg" style="zoom:25%;" />
+<img src="https://github.com/Yinke7/Python/blob/main/Image/context.jpg" style="zoom:25%;" />
 
 END
 
