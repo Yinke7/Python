@@ -26,7 +26,7 @@
 
 点击接受，打开文件可以看到` Hello Bluetooth`的内容：
 
-<img src="https://github.com/Yinke7/Python/tree/main/Bluetooth/Image/context.jpg" style="zoom:25%;" />
+<img src="https://github.com/Yinke7/Python/blob/main/Bluetooth/Image/context.jpg" style="zoom:25%;" />
 
 
 
