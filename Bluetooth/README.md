@@ -1,4 +1,8 @@
 ## 2021.01.18
+运行环境：
+
+Linux主机（不能是虚拟机，我用的是树莓派）
+Pyhton3.7.3
 
 该脚本用于向手机发送文件，是一个` test.txt`文件；文件中的内容为：
 
@@ -28,8 +32,6 @@
 
 <img src="https://github.com/Yinke7/Python/blob/main/Bluetooth/Image/context.jpg" style="zoom:25%;" />
 
-注：
-该脚本目前只能在` Linux`主机上运行，` windows`和虚拟机上似乎不能运行。 
 
 
 
