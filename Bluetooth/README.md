@@ -4,10 +4,7 @@
 
 ` bluettoth test` 
 
-在安装了相关Python库:
-` pip3 install PyBluez`
-` pip3 install PyOBEX`
-执行脚本：
+在安装了相关Python库后，执行:
 
 ` $ python3 Bluettoth_Sendfile2phone.py "AOSP on BullHead"`
 
