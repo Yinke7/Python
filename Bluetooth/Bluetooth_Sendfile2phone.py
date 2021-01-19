@@ -63,7 +63,7 @@ def Test(devicename):
         print("%s - %s" % (name, addr))
         if devicename == name:
             print("Lucky! Found device to send file")
-            RFCOMM_Sendfile(address=addr, fdata=b'bluetooth test\n')
+            RFCOMM_Sendfile(address=addr, fdata=b'Hello Bluetooth\n')
             specdevfound = True
     if not specdevfound:
         print("Not found device wanna")
