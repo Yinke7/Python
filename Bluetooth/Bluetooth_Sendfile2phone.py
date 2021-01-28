@@ -1,3 +1,6 @@
+#!/bin/bash
+# -*- coding:utf-8 -*-
+
 import bluetooth
 import os
 import sys
@@ -6,7 +9,7 @@ from PyOBEX.client import Client
 
 # Scan addresses of the nearby devices and find their servers
 def Bluetooth_Scan():
-    print("Scanning devices nearby")
+    print("Scan devices nearby")
     devices = bluetooth.discover_devices(lookup_names=True)
     if len(devices):
         print("Found devices")
