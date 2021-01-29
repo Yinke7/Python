@@ -28,8 +28,8 @@ def Run(Serialport, senddata, timeout):
 
 if __name__ == "__main__":
     if sys.argv[1].lower() == "help":
-        print("\nusage:\n\t<help/port(/dev/tty*)> <data(str)> <timeout(float)>"
-              "\n\t/dev/ttyUSB0 31 0.5"
+        print("\nusage:\t<help/port(/dev/tty*)> <data(str)> <timeout(float)>"
+              "\n.e.g\t/dev/ttyUSB0 31 0.5"
               "\n")
         exit()
 
