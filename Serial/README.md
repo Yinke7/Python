@@ -4,6 +4,9 @@
 
 * ` Linux`平台
 
+命令格式：
+* ` sudo python3 SerialSend.py -p /dev/ttyUSB0 -b 115200`
+
 安装包：
 
 `$ pip3 install pyserial`
