@@ -3,38 +3,94 @@
 
 import serial
 import sys
+import threading
+import getopt
 
-def Run(Serialport, senddata, timeout):
+
+SERIAL = serial.Serial()
+
+# 继承父类threading.Thread
+class myThread (threading.Thread):
+    def __init__(self, threadID, name, counter):
+        threading.Thread.__init__(self)
+        self.threadID = threadID
+        self.name = name
+        self.counter = counter
+
+    # 把要执行的代码写到run函数里面 线程在创建后会直接运行run函数
+    def run(self):
+        print("Starting " + self.name)
+
+        if "read" == self.name:
+            SerialRead()
+        elif "write" == self.name:
+            SerialWrite()
+        else:
+            pass
+        print("Exiting " + self.name)
+
+
+def Run(port, baud):
 
     # 设置串口端口号，波特率 115200bps，超时时间 0.1s
-    ser = serial.Serial(port=Serialport, baudrate=115200, timeout=float(timeout))
-    print("waitting for [%f] s" % float(timeout))
+    global SERIAL
+    SERIAL = serial.Serial(port=port, baudrate=baud)
 
-    # 发送数据
-    ser.write(bytes.fromhex(senddata))
-    print("send [%s]" % senddata)
+    read = myThread(1, "read", 1)
+    write = myThread(2, "write", 2)
 
-    # 接收数据并打印
     try:
-        while True:
-            readdata = ser.read(size=0xffffff)
-            if readdata:
-                print(readdata.decode('utf-8'))
-    except KeyboardInterrupt:
-        if None != ser:
-            ser.close()
-            print("serial closed")
-
+        read.start()
+        write.start()
+    except Exception as e:
+        SERIAL.close()
+        print("serial closed")
     return
 
-if __name__ == "__main__":
-    if sys.argv[1].lower() == "help":
-        print("\nusage:\t<help/port(/dev/tty*)> <data(str)> <timeout(float)>"
-              "\n.e.g:\t/dev/ttyUSB0 31 0.5"
-              "\n")
-        exit()
+def SerialRead():
+    while True:
+        data = SERIAL.read()
+        if data:
+            print(data.decode("utf-8"), end="")
 
-    Run(sys.argv[1], sys.argv[2], sys.argv[3])
+def SerialWrite():
+    while True:
+        line = sys.stdin.readline()
+        datalist = line.split("\n")
+        datalist = datalist[0].split(" ")
+        try:
+            for data in datalist:
+                SERIAL.write(bytes.fromhex(data))
+        except ValueError:
+            print("ValueError: Hex string must be similar to 'AB', 'ABCD', 'AB CD'...")
+
+
+
+if __name__ == "__main__":
+    port = ""
+    baud = 115200
+    try:
+        opts, args = getopt.getopt(sys.argv[1:], "hp:b:", ["help", "port=", "baud="])
+    except getopt.GetoptError:
+        print("usage: -p<port> -b<baud>")
+        sys.exit(2)
+    if not opts:
+        print("usage: -p<port> -b<baud>")
+        sys.exit(2)
+    for opt, arg in opts:
+        if opt in ("-h", "--help"):
+            print("usage: -p<port> -b<baud>")
+            sys.exit(2)
+        elif opt in ("-p", "--port"):
+            port = arg
+        elif opt in ("-b", "--baud"):
+            baud = arg
+        else:
+            print("usage: -p<port> -b<baud>")
+            sys.exit(2)
+    print("port: %s" % port)
+    print("baud: %s" % baud)
+    Run(port, baud)
 
 
 
