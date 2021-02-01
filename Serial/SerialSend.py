@@ -42,7 +42,7 @@ def Run(port, baud):
     try:
         read.start()
         write.start()
-    except Exception as e:
+    except Exception:
         SERIAL.close()
         print("serial closed")
     return
@@ -63,8 +63,6 @@ def SerialWrite():
                 SERIAL.write(bytes.fromhex(data))
         except ValueError:
             print("ValueError: Hex string must be similar to 'AB', 'ABCD', 'AB CD'...")
-
-
 
 if __name__ == "__main__":
     port = ""
