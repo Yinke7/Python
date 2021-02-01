@@ -4,6 +4,9 @@
 
 * ` Linux`平台
 
+命令格式：
+* ` sudo python3 SerialSend.py -p /dev/ttyUSB0 -b 115200`
+
 安装包：
 
 `$ pip3 install pyserial`
@@ -12,3 +15,5 @@
 
 * 可向串口发送数据，但需手动输入十六进制数
 
+## 2021.02.01
+* 新增发送数据功能
