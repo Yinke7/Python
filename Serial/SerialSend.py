@@ -91,5 +91,6 @@ if __name__ == "__main__":
     else:
         print("port: %s" % port)
         print("baud: %s" % baud)
+        # 运行脚本
         Run(port, baud)
 
