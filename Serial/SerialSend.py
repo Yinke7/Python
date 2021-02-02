@@ -19,7 +19,7 @@ class myThread (threading.Thread):
 
     # 把要执行的代码写到run函数里面 线程在创建后会直接运行run函数
     def run(self):
-        print("Starting " + self.name)
+        print("Starting {0}".format(self.name))
 
         if "read" == self.name:
             SerialRead()
@@ -66,7 +66,7 @@ def SerialWrite():
 
 if __name__ == "__main__":
     port = ""
-    baud = 115200
+    baud = 0
     try:
         opts, args = getopt.getopt(sys.argv[1:], "hp:b:", ["help", "port=", "baud="])
     except getopt.GetoptError:
@@ -86,9 +86,10 @@ if __name__ == "__main__":
         else:
             print("usage: -p<port> -b<baud>")
             sys.exit(2)
-    print("port: %s" % port)
-    print("baud: %s" % baud)
-    Run(port, baud)
-
-
+    if port and baud:
+        print("port: %s" % port)
+        print("baud: %s" % baud)
+        Run(port, baud)
+    else:
+        print("port or baud is not Invalid")
 
