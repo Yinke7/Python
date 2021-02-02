@@ -86,10 +86,10 @@ if __name__ == "__main__":
         else:
             print("usage: -p<port> -b<baud>")
             sys.exit(2)
-    if port and baud:
+    if not port or not baud:
+        print("port or baud is not Invalid")
+    else:
         print("port: %s" % port)
         print("baud: %s" % baud)
         Run(port, baud)
-    else:
-        print("port or baud is not Invalid")
 
