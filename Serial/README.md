@@ -5,7 +5,7 @@
 * ` Linux`平台
 
 命令格式：
-* ` sudo python3 SerialSend.py -p /dev/ttyUSB0 -b 115200`
+* ` sudo python3 SerialSend.py  -b 115200`
 
 安装包：
 
@@ -17,4 +17,3 @@
 
 ## 2021.02.01
 * 修改串口收发流程，采用两个线程分别负责发送和传输
-* 新增发送数据功能
