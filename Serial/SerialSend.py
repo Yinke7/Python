@@ -10,7 +10,7 @@ import subprocess
 
 SERIAL = serial.Serial()
 
-# 继承父类threading.Thread
+
 class myThread (threading.Thread):
     def __init__(self, threadID, name, counter):
         threading.Thread.__init__(self)
@@ -18,7 +18,6 @@ class myThread (threading.Thread):
         self.name = name
         self.counter = counter
 
-    # 把要执行的代码写到run函数里面 线程在创建后会直接运行run函数
     def run(self):
         print("%s ready" % self.name)
 
