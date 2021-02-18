@@ -99,8 +99,6 @@ if __name__ == "__main__":
         if opt in ("-h", "--help"):
             print("usage: -b<baud>")
             sys.exit(2)
-        elif opt in ("-p", "--port"):
-            port = arg
         elif opt in ("-b", "--baud"):
             baud = arg
         else:
