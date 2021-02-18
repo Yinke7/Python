@@ -15,6 +15,8 @@
 
 ` $ pip3 install PyOBEX`
 
+` $ sudo apt-get install libbluetooth-dev`
+
 执行脚本：
 
 ` $ python3 Bluettoth_Sendfile2phone.py "AOSP on BullHead"`
