@@ -5,11 +5,12 @@ import serial
 import sys
 import threading
 import getopt
-
+import os
+import subprocess
 
 SERIAL = serial.Serial()
 
-# 继承父类threading.Thread
+
 class myThread (threading.Thread):
     def __init__(self, threadID, name, counter):
         threading.Thread.__init__(self)
@@ -17,9 +18,8 @@ class myThread (threading.Thread):
         self.name = name
         self.counter = counter
 
-    # 把要执行的代码写到run函数里面 线程在创建后会直接运行run函数
     def run(self):
-        print("Starting " + self.name)
+        print("%s ready" % self.name)
 
         if "read" == self.name:
             SerialRead()
@@ -30,9 +30,21 @@ class myThread (threading.Thread):
         print("Exiting " + self.name)
 
 
-def Run(port, baud):
-
-    # 设置串口端口号，波特率 115200bps，超时时间 0.1s
+def Run(baud):
+    # set the port and baud for serial
+    port = ""
+    devices = GetSerialDevlist()
+    if 1 != len(devices):
+        print("There're %d ports available:" % len(devices), end="")
+        for dev in devices:
+            print("[%s], " % dev, end="")
+        devsel = input("please select one of them\n>>>")
+        print(devsel)
+        for dev in devices:
+            if devsel == dev:
+                port = dev
+    else:
+        port = devices[0]
     global SERIAL
     SERIAL = serial.Serial(port=port, baudrate=baud)
 
@@ -42,7 +54,7 @@ def Run(port, baud):
     try:
         read.start()
         write.start()
-    except Exception as e:
+    except Exception:
         SERIAL.close()
         print("serial closed")
     return
@@ -64,33 +76,40 @@ def SerialWrite():
         except ValueError:
             print("ValueError: Hex string must be similar to 'AB', 'ABCD', 'AB CD'...")
 
-
+def GetSerialDevlist():
+    try:
+        res = subprocess.check_output("ls /dev/tty* | grep ttyUSB*", shell=True)
+        res = str(res, encoding="utf-8")
+        devlist = res.split()
+        return devlist
+    except Exception as e:
+        print(e)
 
 if __name__ == "__main__":
-    port = ""
-    baud = 115200
+    baud = 0
     try:
-        opts, args = getopt.getopt(sys.argv[1:], "hp:b:", ["help", "port=", "baud="])
+        opts, args = getopt.getopt(sys.argv[1:], "hb:", ["help", "baud="])
     except getopt.GetoptError:
-        print("usage: -p<port> -b<baud>")
+        print("usage: -b<baud>")
         sys.exit(2)
     if not opts:
-        print("usage: -p<port> -b<baud>")
+        print("usage: -b<baud>")
         sys.exit(2)
     for opt, arg in opts:
         if opt in ("-h", "--help"):
-            print("usage: -p<port> -b<baud>")
+            print("usage: -b<baud>")
             sys.exit(2)
         elif opt in ("-p", "--port"):
             port = arg
         elif opt in ("-b", "--baud"):
             baud = arg
         else:
-            print("usage: -p<port> -b<baud>")
+            print("usage: -b<baud>")
             sys.exit(2)
-    print("port: %s" % port)
-    print("baud: %s" % baud)
-    Run(port, baud)
-
-
+    if not baud:
+        print("baud is not Invalid")
+    else:
+        print("baud: %s" % baud)
+        # 运行脚本
+        Run(baud)
 
