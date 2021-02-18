@@ -21,7 +21,7 @@
 
 ` $ python3 Bluettoth_Sendfile2phone.py "AOSP on BullHead"`
 
-` "AOSP on BullHead"`是设备的蓝牙名称，执行脚本时徐焕成对应手机的蓝牙设备名称。
+` "AOSP on BullHead"`是设备的蓝牙名称，执行脚本时需换成对应手机的蓝牙设备名称。
 
 运行结果为：
 
