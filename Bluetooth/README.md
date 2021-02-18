@@ -35,8 +35,3 @@
 
 <img src="https://github.com/Yinke7/Python/blob/main/Bluetooth/Image/context.jpg" style="zoom:25%;" />
 
-
-
-
-
-
