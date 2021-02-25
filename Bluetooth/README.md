@@ -15,6 +15,8 @@
 
 ` $ pip3 install PyOBEX`
 
+安装驱动：
+
 ` $ sudo apt-get install libbluetooth-dev`
 
 执行脚本：
@@ -34,4 +36,6 @@
 点击接受，打开文件可以看到` Hello Bluetooth`的内容：
 
 <img src="https://github.com/Yinke7/Python/blob/main/Bluetooth/Image/context.jpg" style="zoom:25%;" />
+
+
 
