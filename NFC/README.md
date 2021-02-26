@@ -5,7 +5,8 @@
 
 所需工具：
 * ` PN532`模块` PN532 NFC HAT`（微雪）
-* ` Proxmark3开发板`, ` Proxmark3 Easy GUI`（破解密码用, https://github.com/Proxmark/proxmark3）
+* ` Mifareonetool`（破解密码用，直接串口连接` PN532`模块，打开软件即可操作）
+* ` Proxmark3开发板`, ` Proxmark3 Easy GUI`（破解密码用, https://github.com/Proxmark/proxmark3.git）
 * ` Mifare Classic EV1 1K`nfc卡
 
 python包：
