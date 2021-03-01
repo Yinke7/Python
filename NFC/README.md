@@ -1,4 +1,4 @@
-#2021.02.25 
+##2021.02.25 
 
 运行环境:
 * ` Raspberrypi4 B`
@@ -16,4 +16,7 @@ python包：
 * 使用` python`脚本可对` Mifare`卡进行读写操作，若卡位加密卡，可使用` Proxmark`先行破解，获取密码后再访问数据
 
 Remark：
-* ID卡数据存储格式（` https://blog.csdn.net/TonnyBrown/article/details/75200601` ）
+* ID卡数据存储格式（` https://blog.csdn.net/TonnyBrown/article/details/75200601` i）
+
+##2021.03.01
+* 新增` x-nucleo-nfc06a1`，该文件夹是基于` st25r3916`的扩展板，可连接树莓派的` spi`接口，使用文件夹中的` demo`进行测试（详见` st`官网）
