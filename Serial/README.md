@@ -9,7 +9,7 @@
 
 安装包：
 
-`$ pip3 install pyserial`
+`$ sudo pip3 install pyserial`
 
 * 该脚本用于在Linux上通过串口通信
 
