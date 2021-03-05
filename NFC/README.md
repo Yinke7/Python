@@ -18,7 +18,6 @@ python包：
 Remark：
 * ID卡数据存储格式 [https://blog.csdn.net/TonnyBrown/article/details/75200601](https://blog.csdn.net/TonnyBrown/article/details/75200601) 
 
-* ID卡数据存储格式 https://blog.csdn.net/TonnyBrown/article/details/75200601
 * NFC Tag 各类型介绍 https://bbs.huaweicloud.com/blogs/169354 `2.2`小节
 
 ##2021.03.01
