@@ -1,4 +1,4 @@
-#2021.02.25 
+##2021.02.25 
 
 运行环境:
 * ` Raspberrypi4 B`
@@ -16,7 +16,16 @@ python包：
 * 使用` python`脚本可对` Mifare`卡进行读写操作，若卡位加密卡，可使用` Proxmark`先行破解，获取密码后再访问数据
 
 Remark：
+<<<<<<< HEAD
 * ID卡数据存储格式 [https://blog.csdn.net/TonnyBrown/article/details/75200601](https://blog.csdn.net/TonnyBrown/article/details/75200601) 
 
 
 
+=======
+* ID卡数据存储格式（` https://blog.csdn.net/TonnyBrown/article/details/75200601` ）
+* NFC Tag 各类型介绍（` https://bbs.huaweicloud.com/blogs/169354` ` 2.2小节`)
+* 
+
+##2021.03.01
+* 新增` x-nucleo-nfc06a1`，该文件夹是基于` st25r3916`的扩展板，可连接树莓派的` spi`接口，使用文件夹中的` demo`进行测试（详见` st`官网）
+>>>>>>> 1d6b92534452aca0dab1d764e57e24a6180ee275

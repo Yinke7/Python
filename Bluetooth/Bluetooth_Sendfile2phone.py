@@ -1,4 +1,4 @@
-#!/bin/python
+#!/bin/python3
 # -*- coding:utf-8 -*-
 
 import bluetooth
@@ -68,7 +68,7 @@ def Test(devicename):
             RFCOMM_Sendfile(address=addr, fdata=b'Hello Bluetooth\n')
             specdevfound = True
     if not specdevfound:
-        print("Not found device wanna")
+        print("Not found required device")
         
     return
 
