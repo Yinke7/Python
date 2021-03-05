@@ -13,7 +13,7 @@ python包：
 * ` RPi.GPIO`
 
 功能描述：
-* 使用` python`脚本可对` Mifare`卡进行读写操作，若卡位加密卡，可使用` Proxmark`先行破解，获取密码后再访问数据
+* 使用` python`脚本可对` Mifare`卡进行读写操作，若卡为加密卡，可使用` Proxmark`先行破解，获取密码后再访问数据
 
 Remark：
 * ID卡数据存储格式 [https://blog.csdn.net/TonnyBrown/article/details/75200601](https://blog.csdn.net/TonnyBrown/article/details/75200601) 
